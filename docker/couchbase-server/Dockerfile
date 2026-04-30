@@ -1,4 +1,5 @@
-FROM couchbase/server:latest AS stage_base
+FROM couchbase/server:7.2.4 AS stage_base
 # FROM couchbase:latest AS stage_base
 COPY init-cbserver.sh /opt/couchbase/init/
-RUN chmod +x /opt/couchbase/init/init-cbserver.sh
+RUN groupadd -r maiauser && useradd -r -g maiauser maiauser
+USER maiauser
