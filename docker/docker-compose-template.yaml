@@ -624,7 +624,7 @@ services:
       - VB_DBCOMPATIBILITY=PG
       - VB_DB=dify
       - VB_USERNAME=dify
-      - VB_PASSWORD=Difyai123456
+      - VB_PASSWORD=${VB_PASSWORD}
     ports:
       - "5434:5432"
     volumes:
@@ -910,7 +910,7 @@ services:
       - elasticsearch
     restart: always
     environment:
-      XPACK_ENCRYPTEDSAVEDOBJECTS_ENCRYPTIONKEY: d1a66dfd-c4d3-4a0a-8290-2abcb83ab3aa
+      XPACK_ENCRYPTEDSAVEDOBJECTS_ENCRYPTIONKEY: ${XPACK_ENCRYPTEDSAVEDOBJECTS_ENCRYPTIONKEY}
       NO_PROXY: localhost,127.0.0.1,elasticsearch,kibana
       XPACK_SECURITY_ENABLED: "true"
       XPACK_SECURITY_ENROLLMENT_ENABLED: "false"
